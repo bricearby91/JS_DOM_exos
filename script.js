@@ -30,11 +30,11 @@ Burger.addEventListener("click", onBurgerClick);
 
 //Exo 3
 
-var cardText = document.querySelector("p.card-text");
+var cardText1 = document.querySelector("p.card-text");
 var editButton = document.querySelector("button.btn-outline-secondary");
 
 function onButtonClick () {
-	cardText.style.color = "red";
+	cardText1.style.color = "red";
 }
 
 editButton.addEventListener("click", onButtonClick);
@@ -60,7 +60,7 @@ editButton2.addEventListener("click", onButtonClick2);
 
 //Exo 5
 
-var nav = document.getElementsByClassName("navbar")[0];
+var nav1 = document.getElementsByClassName("navbar")[0];
 var cssLink = document.getElementsByTagName("link")[0];
 
 onNavbarClick = function() {
@@ -73,7 +73,7 @@ else {
 	}
 }
 
-nav.addEventListener("dblclick", onNavbarClick);
+nav1.addEventListener("dblclick", onNavbarClick);
 
 //Exo 6
 
@@ -117,9 +117,24 @@ container.insertBefore(card6, container.children[0]);
 }
 
 var greyButton = document.querySelectorAll("a.my-2")[1];
-greyButton.removeAttribute("href");
 
-greyButton.addEventListener("click",orderShift);
+greyButton.addEventListener("click",function(event) {
+	event.preventDefault();
+	var container = document.getElementsByClassName("row")[1];
+	var card6 = container.children[5];
+	container.insertBefore(card6, container.children[0]);
+});
 
+//Exo 8
 
-//greyButton.addEventListener("click", orderShift);
+var blueButton = document.querySelectorAll("a.my-2")[0];
+
+blueButton.addEventListener("click",function(event) {
+	event.preventDefault();
+	var container = document.getElementsByClassName("row")[1];
+    var card1 = container.removeChild(container.children[0]);
+	container.appendChild(card1);
+});
+
+//Exo 9
+
